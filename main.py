@@ -105,7 +105,7 @@ def filtro():
 
     global mis_datos
 
-    filtro = []
+    filtro_l = [] #cambie de filtro a filtro_l para evitar colision en la llamada recursiva
 
     print('Digite el numero de acuerdo a la columna la que desea filtrar: ')
     print("0: Embarazos")
@@ -123,17 +123,17 @@ def filtro():
         for fila in mis_datos:
             try:
                 if float(fila[x]) >= y:
-                    filtro.append(fila)
+                    filtro_l.append(fila)
             except:
                 continue
     else:
         print('Digite un numero valido')
         filtro() #llama recursivamente hasta que el usuario digite un numero correcto
 
-    filtro.sort(key=lambda a: a[x])
+    filtro_l.sort(key=lambda a: a[x])
 
-    print(f'Se filtraron {len(mis_datos)-len(filtro)} resultados')
-    for linea in filtro:
+    print(f'Se filtraron {len(mis_datos)-len(filtro_l)} resultados')
+    for linea in filtro_l:
         print(linea)
 
 
