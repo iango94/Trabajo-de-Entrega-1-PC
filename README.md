@@ -1,26 +1,16 @@
 # Trabajo-de-Entrega-1-PC
 Diabetes dataset
 
-Video/Menú Interactivo             -> LUNES 13 DE ABRIL
-- Hannah Mendez/ Thomas Rincón
+# Contribuciones del grupo
 
-Poster/Preguntas                   -> LUNES 13 DE ABRIL 
-- Camilo Camacho
-
-Cargar el dataset                  -> JUEVES 9 DE ABRIL
-- Alejandro Osorio
-
-Funcionalidad Obligatoria 1        -> JUEVES 9 DE ABRIL 
-- Ian Gómez
-
-Funcionalidad Obligatoria 2        -> LUNES 13 DE ABRIL
-- Sara Cristancho
-
-Funcionalidad Opcional             -> LUNES 13 DE ABRIL
-- David Cortés
-
-Próxima reunión                    -> JUEVES 16 DE ABRIL
-
+-	**Subida del DataSet y Creación del GitHub:** Alejandro Osorio Gómez
+-	**Menú interactivo:** Hannah Estefanía Méndez Rojas
+-	**Funcionalidad obligatoria 1:** Ian Jacobo Gómez Barrera
+-	**Funcionalidad obligatoria 2:** Sara Katherine Cristancho Páez
+-	**Funcionalidad opcional:** David Alejandro Cortés Marín
+-	**Preguntas del grupo y Poster:** Camilo Eduardo Camacho Lara
+-	**Video:** Hannah Estefanía Méndez Rojas / Thomas Rincón Giralso
+-	**README:** Todo el grupo
 
 # Preguntas sobre el dataset:
 - ¿Cuál es el nivel promedio de glucosa e insulina en pacientes que resultaron positivos de diabetes frente a los que no?
