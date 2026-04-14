@@ -1,4 +1,4 @@
-# Contribuciones del grupo
+# Contribuciones del grupo - Entrega 1
 
 -	**Subida del DataSet y Creación del GitHub:** Alejandro Osorio Gómez
 -	**Menú interactivo:** Hannah Estefanía Méndez Rojas
