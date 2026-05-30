@@ -81,8 +81,7 @@ class VentanaPrincipal(QWidget):
     # ==== FUNCIONES CONECTORAS ====
     
     def cargar_dataset(self):
-        # Cambia esta ruta si tu archivo se llama diferente o está en otra carpeta
-        self.df = cargar_y_limpiar("../Data/diabetes_COMPLETO.csv")
+        self.df = cargar_y_limpiar("Data\\diabetes_COMPLETO.csv")
         if self.df is not None:
             self.area_texto.setText(f"Dataset cargado correctamente. Registros: {len(self.df)}")
             guardar_historial("Dataset cargado")
@@ -167,14 +166,14 @@ class VentanaPrincipal(QWidget):
         ax1 = self.figura.add_subplot(121)
         ax2 = self.figura.add_subplot(122)
         
-        # Gráfico 1: Barras (Glucosa promedio por Edad)
-        edades, glucosas = analisis.generar_datos_grafico_barras(self.df)
+        # Gráfico 1: Barras (Casos positivos por Edad)
+        edades, casos_p = analisis.generar_datos_grafico_barras(self.df)
         if edades:
             # Tomamos una muestra o los primeros 15 registros para que se vea legible el gráfico de barras
-            ax1.bar(edades[:15], glucosas[:15], color='teal', alpha=0.7)
-            ax1.set_title("Glucosa Promedio por Edad (Muestra)")
+            ax1.bar(edades, casos_p, color='teal', alpha=0.7)
+            ax1.set_title("Casos Positivos por Edad")
             ax1.set_xlabel("Edad")
-            ax1.set_ylabel("Glucosa")
+            ax1.set_ylabel("Casos Positivos")
 
         # Gráfico 2: Línea (BMI promedio según número de Embarazos)
         embarazos, bmis = analisis.generar_datos_grafico_linea(self.df)
