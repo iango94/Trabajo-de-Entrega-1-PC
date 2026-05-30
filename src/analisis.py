@@ -4,6 +4,7 @@ import datetime as dt
 import csv
 import json
 import os
+import pandas as pd
 
 DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -292,4 +293,42 @@ def guardar_stadisticas_dataset(datos):
     
     with open(ruta, 'w', encoding='utf-8') as aw:
         json.dump(datos, aw, indent=4)
+
+# analisis.pY
+def obtener_estadisticas_columna(df, columna):
+    """Retorna las estadísticas básicas de una columna."""
+    if df is None or columna not in df.columns:
+        return "No hay datos o la columna no existe."
+    return df[columna].describe().to_string()
+
+def filtrar_por_condicion(df, columna, valor_limite):
+    """Filtra las filas donde la columna sea mayor o igual al valor límite."""
+    if df is None or columna not in df.columns:
+        return None
+    try:
+        limite = float(valor_limite)
+        # Filtramos
+        resultado = df[df[columna] >= limite]
+        # Lo ordenamos como lo hacía tu código original
+        resultado = resultado.sort_values(by=columna)
+        return resultado
+    except ValueError:
+        return None
+
+def generar_datos_grafico_barras(df):
+    """Calcula la glucosa promedio por rango de edad (reemplazo de sismos por departamento)."""
+    if df is None:
+        return None, None
+    # Agrupamos por edad y sacamos promedio de Glucosa
+    agrupado = df.groupby('Age')['Glucose'].mean().reset_index()
+    return agrupado['Age'].tolist(), agrupado['Glucose'].tolist()
+
+def generar_datos_grafico_linea(df):
+    """Calcula el BMI promedio por nivel de embarazo (reemplazo de sismos por mes)."""
+    if df is None:
+        return None, None
+    # Agrupamos por cantidad de embarazos (Pregnancies) y sacamos promedio de BMI
+    agrupado = df.groupby('Pregnancies')['BMI'].mean().reset_index()
+    return agrupado['Pregnancies'].tolist(), agrupado['BMI'].tolist()
+    
         
